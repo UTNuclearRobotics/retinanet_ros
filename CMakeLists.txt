@@ -26,6 +26,11 @@ catkin_package(
   CATKIN_DEPENDS actionlib_msgs
 )
 
+install (PROGRAMS
+  src/retinanet_detection/test.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+
 install(DIRECTORY scripts/
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
   USE_SOURCE_PERMISSIONS

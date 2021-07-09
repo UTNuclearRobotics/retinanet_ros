@@ -113,6 +113,7 @@ class ObjectDectors(object):
                     detection_box.xmax = box[2]
                     detection_box.ymax = box[3]
                     detection_box.probability = confidence
+                    detection_box.Class = 'barrel'
                     Boxes_msg.bounding_boxes.append(detection_box)
 
             # msg_frame = self.bridge.cv2_to_imgmsg(image_ori)
