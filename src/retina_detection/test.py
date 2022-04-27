@@ -23,15 +23,16 @@ TARGET_SIZE=512
 class ObjectDectors(object):
     def __init__(self, wait=0.0):
         # image_topic = "/camera/rgb/image_raw"
-        # self.model_ = Detector(timestamp="2021-04-22T11.25.25")
-        self.model_ = Detector(timestamp="2021-07-01T22.24.44")
+        # self.model_ = Detector(timestamp="2021-07-01T22.24.44")
+        # self.model_ = Detector(timestamp="2022-01-20T23.21.52")
+        self.model_ = Detector(timestamp="2022-03-03T22.22.06")
         self.model_.eval()
         self.img_pub =rospy.Publisher("detected_image", Image, queue_size=10)
         self.ret_pub =rospy.Publisher("retina_ros/bounding_boxes", BoundingBoxes, queue_size=10)
         self.bridge = CvBridge()
         print("model-created")
         # image_topic = "/hsrb/head_rgbd_sensor/rgb/image_raw"
-        image_topic = "camera/color/image_raw"
+        image_topic = "realsense_front/color/image_raw"
         # camera/rgb/image_raw"
         rospy.Subscriber(image_topic, Image, self.image_callback)
         self.savefigure=False
