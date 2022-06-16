@@ -94,6 +94,7 @@ class ObjectDectors(object):
             Boxes_msg=BoundingBoxes()
             Boxes_msg.image_header = msg.header
             Boxes_msg.header.stamp = rospy.Time.now()
+            Boxes_msg.header.frame_id = "detection"
             for box in boxes[0]:
                 # print(box.confidence)
                 confidence = float(box.confidence)
@@ -119,6 +120,8 @@ class ObjectDectors(object):
 
             # msg_frame = self.bridge.cv2_to_imgmsg(image_ori)
             msg_frame = self.bridge.cv2_to_imgmsg(image_before_resize)
+            msg_frame.header.stamp = rospy.Time.now()
+            msg_frame.header.frame_id = "detection_image"
             self.img_pub.publish(msg_frame )
             self.ret_pub.publish(Boxes_msg)
 
