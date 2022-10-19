@@ -1,0 +1,453 @@
+[01/20/2022 23:21:55] INFO: Model architecture: 
+ Detector(
+  (backbone): ResNet(
+    (conv1): Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
+    (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (relu): ReLU(inplace=True)
+    (maxpool): MaxPool2d(kernel_size=3, stride=2, padding=1, dilation=1, ceil_mode=False)
+    (layer1): Sequential(
+      (0): BasicBlock(
+        (conv1): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (1): BasicBlock(
+        (conv1): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (layer2): Sequential(
+      (0): BasicBlock(
+        (conv1): Conv2d(64, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+        (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (downsample): Sequential(
+          (0): Conv2d(64, 128, kernel_size=(1, 1), stride=(2, 2), bias=False)
+          (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+      (1): BasicBlock(
+        (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (layer3): Sequential(
+      (0): BasicBlock(
+        (conv1): Conv2d(128, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (downsample): Sequential(
+          (0): Conv2d(128, 256, kernel_size=(1, 1), stride=(2, 2), bias=False)
+          (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+      (1): BasicBlock(
+        (conv1): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (layer4): Sequential(
+      (0): BasicBlock(
+        (conv1): Conv2d(256, 512, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+        (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (downsample): Sequential(
+          (0): Conv2d(256, 512, kernel_size=(1, 1), stride=(2, 2), bias=False)
+          (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+      (1): BasicBlock(
+        (conv1): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+  )
+  (fpn): FPN(
+    (lateral_convs): ModuleList(
+      (0): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1))
+      (1): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1))
+      (2): Conv2d(128, 128, kernel_size=(1, 1), stride=(1, 1))
+    )
+    (convs): ModuleList(
+      (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (3): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (4): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+  )
+  (retinanet_head): RetinaNetHead(
+    (regression_subnet): Sequential(
+      (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (1): ReLU(inplace=True)
+      (2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (3): ReLU(inplace=True)
+      (4): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (5): ReLU(inplace=True)
+      (6): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (7): ReLU(inplace=True)
+      (8): Conv2d(128, 36, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+    (classification_subnet): Sequential(
+      (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (1): ReLU(inplace=True)
+      (2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (3): ReLU(inplace=True)
+      (4): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (5): ReLU(inplace=True)
+      (6): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (7): ReLU(inplace=True)
+      (8): Conv2d(128, 9, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+  )
+)
+[01/20/2022 23:22:02] INFO: Epoch: 0 step 0 (0%), clf loss 1.1299, reg loss 0.48995, lr 0.0001
+[01/20/2022 23:23:06] INFO: Epoch: 0 step 10 (71%), clf loss 1.13, reg loss 0.49433, lr 0.0001
+[01/20/2022 23:23:25] INFO: epoch=0. results={}.
+[01/20/2022 23:23:31] INFO: Epoch: 1 step 0 (0%), clf loss 1.1299, reg loss 0.4713, lr 0.0001
+[01/20/2022 23:24:35] INFO: Epoch: 1 step 10 (71%), clf loss 1.1301, reg loss 0.49471, lr 0.0001
+[01/20/2022 23:24:55] INFO: epoch=1. results={}.
+[01/20/2022 23:25:01] INFO: Epoch: 2 step 0 (0%), clf loss 1.1301, reg loss 0.49591, lr 0.0001
+[01/20/2022 23:26:05] INFO: Epoch: 2 step 10 (71%), clf loss 1.1299, reg loss 0.49538, lr 0.0001
+[01/20/2022 23:26:25] INFO: epoch=2. results={}.
+[01/20/2022 23:26:31] INFO: Epoch: 3 step 0 (0%), clf loss 1.1297, reg loss 0.47817, lr 0.0001
+[01/20/2022 23:27:35] INFO: Epoch: 3 step 10 (71%), clf loss 1.1298, reg loss 0.48343, lr 0.0001
+[01/20/2022 23:27:55] INFO: epoch=3. results={}.
+[01/20/2022 23:28:01] INFO: Epoch: 4 step 0 (0%), clf loss 1.1299, reg loss 0.49763, lr 0.0001
+[01/20/2022 23:29:06] INFO: Epoch: 4 step 10 (71%), clf loss 1.1298, reg loss 0.48902, lr 0.0001
+[01/20/2022 23:29:25] INFO: epoch=4. results={}.
+[01/20/2022 23:29:32] INFO: Epoch: 5 step 0 (0%), clf loss 1.1297, reg loss 0.49349, lr 0.0001
+[01/20/2022 23:30:38] INFO: Epoch: 5 step 10 (71%), clf loss 1.1298, reg loss 0.48939, lr 0.0001
+[01/20/2022 23:30:58] INFO: epoch=5. results={}.
+[01/20/2022 23:31:05] INFO: Epoch: 6 step 0 (0%), clf loss 1.1296, reg loss 0.50198, lr 0.0001
+[01/20/2022 23:33:03] INFO: Epoch: 6 step 10 (71%), clf loss 1.1296, reg loss 0.49277, lr 0.0001
+[01/20/2022 23:33:22] INFO: epoch=6. results={}.
+[01/20/2022 23:33:29] INFO: Epoch: 7 step 0 (0%), clf loss 1.1293, reg loss 0.531, lr 0.0001
+[01/20/2022 23:34:31] INFO: Epoch: 7 step 10 (71%), clf loss 1.1292, reg loss 0.49909, lr 0.0001
+[01/20/2022 23:34:50] INFO: epoch=7. results={}.
+[01/20/2022 23:34:57] INFO: Epoch: 8 step 0 (0%), clf loss 1.1289, reg loss 0.49298, lr 0.0001
+[01/20/2022 23:36:01] INFO: Epoch: 8 step 10 (71%), clf loss 1.1288, reg loss 0.4888, lr 0.0001
+[01/20/2022 23:36:21] INFO: epoch=8. results={}.
+[01/20/2022 23:36:27] INFO: Epoch: 9 step 0 (0%), clf loss 1.1282, reg loss 0.48713, lr 0.0001
+[01/20/2022 23:37:34] INFO: Epoch: 9 step 10 (71%), clf loss 1.1277, reg loss 0.48984, lr 0.0001
+[01/20/2022 23:37:54] INFO: epoch=9. results={}.
+[01/20/2022 23:38:01] INFO: Epoch: 10 step 0 (0%), clf loss 1.1247, reg loss 0.49053, lr 0.0001
+[01/20/2022 23:39:06] INFO: Epoch: 10 step 10 (71%), clf loss 1.1219, reg loss 0.47485, lr 0.0001
+[01/20/2022 23:39:26] INFO: Starting evaluation
+[01/20/2022 23:39:34] INFO: Evaluation took 8.518 seconds.
+[01/20/2022 23:39:34] INFO: Improved metrics: ['ap30', 'rec30']
+[01/20/2022 23:39:34] INFO: epoch=10. results={'ap30': 0.0, 'rec30': 0.0}.
+[01/20/2022 23:39:41] INFO: Epoch: 11 step 0 (0%), clf loss 1.1003, reg loss 0.43856, lr 0.0001
+[01/20/2022 23:40:50] INFO: Epoch: 11 step 10 (71%), clf loss 1.0813, reg loss 0.44289, lr 0.0001
+[01/20/2022 23:41:13] INFO: Starting evaluation
+[01/20/2022 23:41:22] INFO: Evaluation took 9.651 seconds.
+[01/20/2022 23:41:22] INFO: Improved metrics: ['ap30', 'rec30']
+[01/20/2022 23:41:23] INFO: epoch=11. results={'ap30': 0.0, 'rec30': 0.0}.
+[01/20/2022 23:41:30] INFO: Epoch: 12 step 0 (0%), clf loss 0.99999, reg loss 0.41473, lr 0.0001
+[01/20/2022 23:42:37] INFO: Epoch: 12 step 10 (71%), clf loss 0.88508, reg loss 0.43784, lr 0.0001
+[01/20/2022 23:42:58] INFO: Starting evaluation
+[01/20/2022 23:43:07] INFO: Evaluation took 9.007 seconds.
+[01/20/2022 23:43:07] INFO: Improved metrics: ['ap30', 'rec30']
+[01/20/2022 23:43:07] INFO: epoch=12. results={'ap30': 0.5228603770746152, 'rec30': 0.5897435897435898}.
+[01/20/2022 23:43:14] INFO: Epoch: 13 step 0 (0%), clf loss 0.70014, reg loss 0.41891, lr 0.0001
+[01/20/2022 23:44:17] INFO: Epoch: 13 step 10 (71%), clf loss 0.6725, reg loss 0.42226, lr 0.0001
+[01/20/2022 23:44:36] INFO: Starting evaluation
+[01/20/2022 23:44:44] INFO: Evaluation took 8.461 seconds.
+[01/20/2022 23:44:44] INFO: Improved metrics: ['ap30', 'rec30']
+[01/20/2022 23:44:45] INFO: epoch=13. results={'ap30': 0.5787861463392303, 'rec30': 0.6153846153846154}.
+[01/20/2022 23:44:51] INFO: Epoch: 14 step 0 (0%), clf loss 0.66932, reg loss 0.43553, lr 0.0001
+[01/20/2022 23:45:52] INFO: Epoch: 14 step 10 (71%), clf loss 0.56276, reg loss 0.42514, lr 0.0001
+[01/20/2022 23:46:11] INFO: Starting evaluation
+[01/20/2022 23:46:19] INFO: Evaluation took 7.896 seconds.
+[01/20/2022 23:46:19] INFO: Improved metrics: ['ap30', 'rec30']
+[01/20/2022 23:46:19] INFO: epoch=14. results={'ap30': 0.643058605377446, 'rec30': 0.6923076923076923}.
+[01/20/2022 23:46:25] INFO: Epoch: 15 step 0 (0%), clf loss 0.46653, reg loss 0.39287, lr 0.0001
+[01/20/2022 23:47:26] INFO: Epoch: 15 step 10 (71%), clf loss 0.47768, reg loss 0.39864, lr 0.0001
+[01/20/2022 23:47:44] INFO: Starting evaluation
+[01/20/2022 23:47:52] INFO: Evaluation took 7.683 seconds.
+[01/20/2022 23:47:52] INFO: Improved metrics: []
+[01/20/2022 23:47:52] INFO: epoch=15. results={'ap30': 0.643058605377446, 'rec30': 0.6923076923076923}.
+[01/20/2022 23:47:58] INFO: Epoch: 16 step 0 (0%), clf loss 0.38918, reg loss 0.34389, lr 0.0001
+[01/20/2022 23:48:59] INFO: Epoch: 16 step 10 (71%), clf loss 0.40615, reg loss 0.37488, lr 0.0001
+[01/20/2022 23:49:18] INFO: Starting evaluation
+[01/20/2022 23:49:26] INFO: Evaluation took 8.318 seconds.
+[01/20/2022 23:49:26] INFO: Improved metrics: ['rec30']
+[01/20/2022 23:49:26] INFO: epoch=16. results={'ap30': 0.643058605377446, 'rec30': 0.6923076923076923}.
+[01/20/2022 23:49:33] INFO: Epoch: 17 step 0 (0%), clf loss 0.31081, reg loss 0.34205, lr 0.0001
+[01/20/2022 23:50:38] INFO: Epoch: 17 step 10 (71%), clf loss 0.35582, reg loss 0.35433, lr 0.0001
+[01/20/2022 23:50:57] INFO: Starting evaluation
+[01/20/2022 23:51:06] INFO: Evaluation took 8.399 seconds.
+[01/20/2022 23:51:06] INFO: Improved metrics: ['rec30']
+[01/20/2022 23:51:06] INFO: epoch=17. results={'ap30': 0.643058605377446, 'rec30': 0.8205128205128205}.
+[01/20/2022 23:51:12] INFO: Epoch: 18 step 0 (0%), clf loss 0.30373, reg loss 0.33166, lr 0.0001
+[01/20/2022 23:52:17] INFO: Epoch: 18 step 10 (71%), clf loss 0.34039, reg loss 0.34627, lr 0.0001
+[01/20/2022 23:52:37] INFO: Starting evaluation
+[01/20/2022 23:52:46] INFO: Evaluation took 8.822 seconds.
+[01/20/2022 23:52:46] INFO: Improved metrics: ['rec30']
+[01/20/2022 23:52:46] INFO: epoch=18. results={'ap30': 0.643058605377446, 'rec30': 0.8974358974358975}.
+[01/20/2022 23:52:52] INFO: Epoch: 19 step 0 (0%), clf loss 0.31472, reg loss 0.30178, lr 0.0001
+[01/20/2022 23:53:56] INFO: Epoch: 19 step 10 (71%), clf loss 0.32612, reg loss 0.33026, lr 0.0001
+[01/20/2022 23:54:15] INFO: Starting evaluation
+[01/20/2022 23:54:23] INFO: Evaluation took 7.895 seconds.
+[01/20/2022 23:54:23] INFO: Improved metrics: ['ap30']
+[01/20/2022 23:54:23] INFO: epoch=19. results={'ap30': 0.7025112061464096, 'rec30': 0.8974358974358975}.
+[01/20/2022 23:54:30] INFO: Epoch: 20 step 0 (0%), clf loss 0.28443, reg loss 0.29764, lr 0.0001
+[01/20/2022 23:55:33] INFO: Epoch: 20 step 10 (71%), clf loss 0.31651, reg loss 0.31295, lr 0.0001
+[01/20/2022 23:55:51] INFO: Starting evaluation
+[01/20/2022 23:55:59] INFO: Evaluation took 7.811 seconds.
+[01/20/2022 23:55:59] INFO: Improved metrics: ['ap30']
+[01/20/2022 23:55:59] INFO: epoch=20. results={'ap30': 0.7443490123707381, 'rec30': 0.8974358974358975}.
+[01/20/2022 23:56:05] INFO: Epoch: 21 step 0 (0%), clf loss 0.27481, reg loss 0.28179, lr 0.0001
+[01/20/2022 23:57:09] INFO: Epoch: 21 step 10 (71%), clf loss 0.28703, reg loss 0.29786, lr 0.0001
+[01/20/2022 23:57:36] INFO: Starting evaluation
+[01/20/2022 23:57:46] INFO: Evaluation took 9.920 seconds.
+[01/20/2022 23:57:46] INFO: Improved metrics: []
+[01/20/2022 23:57:46] INFO: epoch=21. results={'ap30': 0.7443490123707381, 'rec30': 0.8974358974358975}.
+[01/20/2022 23:57:59] INFO: Epoch: 22 step 0 (0%), clf loss 0.27583, reg loss 0.26562, lr 0.0001
+[01/20/2022 23:59:34] INFO: Epoch: 22 step 10 (71%), clf loss 0.27934, reg loss 0.28047, lr 0.0001
+[01/20/2022 23:59:53] INFO: Starting evaluation
+[01/21/2022 00:00:02] INFO: Evaluation took 8.417 seconds.
+[01/21/2022 00:00:02] INFO: Improved metrics: ['ap30']
+[01/21/2022 00:00:02] INFO: epoch=22. results={'ap30': 0.8630003630003631, 'rec30': 0.8974358974358975}.
+[01/21/2022 00:00:08] INFO: Epoch: 23 step 0 (0%), clf loss 0.24899, reg loss 0.24466, lr 0.0001
+[01/21/2022 00:01:11] INFO: Epoch: 23 step 10 (71%), clf loss 0.25634, reg loss 0.24478, lr 0.0001
+[01/21/2022 00:01:31] INFO: Starting evaluation
+[01/21/2022 00:01:39] INFO: Evaluation took 8.501 seconds.
+[01/21/2022 00:01:39] INFO: Improved metrics: ['ap30', 'rec30']
+[01/21/2022 00:01:40] INFO: epoch=23. results={'ap30': 0.8847241107927216, 'rec30': 0.8974358974358975}.
+[01/21/2022 00:01:46] INFO: Epoch: 24 step 0 (0%), clf loss 0.25872, reg loss 0.24991, lr 0.0001
+[01/21/2022 00:02:48] INFO: Epoch: 24 step 10 (71%), clf loss 0.26331, reg loss 0.2567, lr 0.0001
+[01/21/2022 00:03:08] INFO: Starting evaluation
+[01/21/2022 00:03:18] INFO: Evaluation took 9.904 seconds.
+[01/21/2022 00:03:18] INFO: Improved metrics: []
+[01/21/2022 00:03:18] INFO: epoch=24. results={'ap30': 0.8847241107927216, 'rec30': 0.8974358974358975}.
+[01/21/2022 00:03:24] INFO: Epoch: 25 step 0 (0%), clf loss 0.23887, reg loss 0.22474, lr 0.0001
+[01/21/2022 00:04:28] INFO: Epoch: 25 step 10 (71%), clf loss 0.25787, reg loss 0.23384, lr 0.0001
+[01/21/2022 00:04:49] INFO: Starting evaluation
+[01/21/2022 00:04:58] INFO: Evaluation took 9.047 seconds.
+[01/21/2022 00:04:58] INFO: Improved metrics: ['ap30', 'rec30']
+[01/21/2022 00:04:59] INFO: epoch=25. results={'ap30': 0.9175207329053483, 'rec30': 0.9230769230769231}.
+[01/21/2022 00:05:05] INFO: Epoch: 26 step 0 (0%), clf loss 0.20685, reg loss 0.19527, lr 0.0001
+[01/21/2022 00:06:46] INFO: Epoch: 26 step 10 (71%), clf loss 0.23756, reg loss 0.22354, lr 0.0001
+[01/21/2022 00:07:08] INFO: Starting evaluation
+[01/21/2022 00:07:17] INFO: Evaluation took 8.942 seconds.
+[01/21/2022 00:07:17] INFO: Improved metrics: ['ap30', 'rec30']
+[01/21/2022 00:07:17] INFO: epoch=26. results={'ap30': 0.9175207329053483, 'rec30': 0.9230769230769231}.
+[01/21/2022 00:07:24] INFO: Epoch: 27 step 0 (0%), clf loss 0.24285, reg loss 0.20415, lr 0.0001
+[01/21/2022 00:08:26] INFO: Epoch: 27 step 10 (71%), clf loss 0.24173, reg loss 0.20469, lr 0.0001
+[01/21/2022 00:08:46] INFO: Starting evaluation
+[01/21/2022 00:08:55] INFO: Evaluation took 8.884 seconds.
+[01/21/2022 00:08:55] INFO: Improved metrics: ['rec30']
+[01/21/2022 00:08:55] INFO: epoch=27. results={'ap30': 0.9175207329053483, 'rec30': 0.9230769230769231}.
+[01/21/2022 00:09:01] INFO: Epoch: 28 step 0 (0%), clf loss 0.22816, reg loss 0.19489, lr 0.0001
+[01/21/2022 00:10:12] INFO: Epoch: 28 step 10 (71%), clf loss 0.25004, reg loss 0.20887, lr 0.0001
+[01/21/2022 00:10:30] INFO: Starting evaluation
+[01/21/2022 00:10:38] INFO: Evaluation took 7.685 seconds.
+[01/21/2022 00:10:38] INFO: Improved metrics: ['ap30', 'rec30']
+[01/21/2022 00:10:38] INFO: epoch=28. results={'ap30': 0.9737015121630506, 'rec30': 0.9743589743589743}.
+[01/21/2022 00:10:44] INFO: Epoch: 29 step 0 (0%), clf loss 0.21764, reg loss 0.12969, lr 0.0001
+[01/21/2022 00:11:46] INFO: Epoch: 29 step 10 (71%), clf loss 0.22172, reg loss 0.18175, lr 0.0001
+[01/21/2022 00:12:05] INFO: Starting evaluation
+[01/21/2022 00:12:13] INFO: Evaluation took 8.148 seconds.
+[01/21/2022 00:12:13] INFO: Improved metrics: ['ap30', 'rec30']
+[01/21/2022 00:12:13] INFO: epoch=29. results={'ap30': 0.9737015121630506, 'rec30': 0.9743589743589743}.
+[01/21/2022 00:12:19] INFO: Epoch: 30 step 0 (0%), clf loss 0.19085, reg loss 0.15468, lr 0.0001
+[01/21/2022 00:13:22] INFO: Epoch: 30 step 10 (71%), clf loss 0.21281, reg loss 0.18438, lr 0.0001
+[01/21/2022 00:13:41] INFO: Starting evaluation
+[01/21/2022 00:13:49] INFO: Evaluation took 8.234 seconds.
+[01/21/2022 00:13:49] INFO: Improved metrics: ['ap30', 'rec30']
+[01/21/2022 00:13:49] INFO: epoch=30. results={'ap30': 0.9737015121630506, 'rec30': 0.9743589743589743}.
+[01/21/2022 00:13:56] INFO: Epoch: 31 step 0 (0%), clf loss 0.22966, reg loss 0.15205, lr 0.0001
+[01/21/2022 00:14:59] INFO: Epoch: 31 step 10 (71%), clf loss 0.20905, reg loss 0.17204, lr 0.0001
+[01/21/2022 00:15:25] INFO: Starting evaluation
+[01/21/2022 00:15:34] INFO: Evaluation took 8.678 seconds.
+[01/21/2022 00:15:34] INFO: Improved metrics: []
+[01/21/2022 00:15:34] INFO: epoch=31. results={'ap30': 0.9737015121630506, 'rec30': 0.9743589743589743}.
+[01/21/2022 00:15:40] INFO: Epoch: 32 step 0 (0%), clf loss 0.23485, reg loss 0.14633, lr 0.0001
+[01/21/2022 00:17:28] INFO: Epoch: 32 step 10 (71%), clf loss 0.22318, reg loss 0.16698, lr 0.0001
+[01/21/2022 00:17:48] INFO: Starting evaluation
+[01/21/2022 00:17:57] INFO: Evaluation took 8.763 seconds.
+[01/21/2022 00:17:57] INFO: Improved metrics: ['ap30', 'rec30']
+[01/21/2022 00:17:57] INFO: epoch=32. results={'ap30': 0.9737015121630506, 'rec30': 0.9743589743589743}.
+[01/21/2022 00:18:03] INFO: Epoch: 33 step 0 (0%), clf loss 0.17935, reg loss 0.15271, lr 0.0001
+[01/21/2022 00:19:06] INFO: Epoch: 33 step 10 (71%), clf loss 0.19204, reg loss 0.1657, lr 0.0001
+[01/21/2022 00:19:25] INFO: Starting evaluation
+[01/21/2022 00:19:33] INFO: Evaluation took 8.047 seconds.
+[01/21/2022 00:19:33] INFO: Improved metrics: []
+[01/21/2022 00:19:33] INFO: epoch=33. results={'ap30': 0.9737015121630506, 'rec30': 0.9743589743589743}.
+[01/21/2022 00:19:39] INFO: Epoch: 34 step 0 (0%), clf loss 0.20396, reg loss 0.19135, lr 0.0001
+[01/21/2022 00:20:42] INFO: Epoch: 34 step 10 (71%), clf loss 0.20445, reg loss 0.16667, lr 0.0001
+[01/21/2022 00:21:02] INFO: Starting evaluation
+[01/21/2022 00:21:10] INFO: Evaluation took 8.306 seconds.
+[01/21/2022 00:21:10] INFO: Improved metrics: ['ap30', 'rec30']
+[01/21/2022 00:21:10] INFO: epoch=34. results={'ap30': 0.9737015121630506, 'rec30': 0.9743589743589743}.
+[01/21/2022 00:21:16] INFO: Epoch: 35 step 0 (0%), clf loss 0.17138, reg loss 0.1257, lr 0.0001
+[01/21/2022 00:22:22] INFO: Epoch: 35 step 10 (71%), clf loss 0.19294, reg loss 0.1444, lr 0.0001
+[01/21/2022 00:22:42] INFO: Starting evaluation
+[01/21/2022 00:22:50] INFO: Evaluation took 8.648 seconds.
+[01/21/2022 00:22:50] INFO: Improved metrics: ['ap30', 'rec30']
+[01/21/2022 00:22:51] INFO: epoch=35. results={'ap30': 0.9737015121630506, 'rec30': 0.9743589743589743}.
+[01/21/2022 00:22:57] INFO: Epoch: 36 step 0 (0%), clf loss 0.18407, reg loss 0.12769, lr 0.0001
+[01/21/2022 00:24:02] INFO: Epoch: 36 step 10 (71%), clf loss 0.19951, reg loss 0.1374, lr 0.0001
+[01/21/2022 00:24:22] INFO: Starting evaluation
+[01/21/2022 00:24:31] INFO: Evaluation took 8.555 seconds.
+[01/21/2022 00:24:31] INFO: Improved metrics: ['rec30']
+[01/21/2022 00:24:31] INFO: epoch=36. results={'ap30': 0.9737015121630506, 'rec30': 0.9743589743589743}.
+[01/21/2022 00:24:37] INFO: Epoch: 37 step 0 (0%), clf loss 0.14101, reg loss 0.098859, lr 0.0001
+[01/21/2022 00:25:43] INFO: Epoch: 37 step 10 (71%), clf loss 0.17934, reg loss 0.14759, lr 0.0001
+[01/21/2022 00:26:02] INFO: Starting evaluation
+[01/21/2022 00:26:11] INFO: Evaluation took 8.823 seconds.
+[01/21/2022 00:26:11] INFO: Improved metrics: ['ap30', 'rec30']
+[01/21/2022 00:26:11] INFO: epoch=37. results={'ap30': 0.9737015121630506, 'rec30': 0.9743589743589743}.
+[01/21/2022 00:26:18] INFO: Epoch: 38 step 0 (0%), clf loss 0.17217, reg loss 0.11263, lr 0.0001
+[01/21/2022 00:27:23] INFO: Epoch: 38 step 10 (71%), clf loss 0.18163, reg loss 0.15507, lr 0.0001
+[01/21/2022 00:27:43] INFO: Starting evaluation
+[01/21/2022 00:27:52] INFO: Evaluation took 8.668 seconds.
+[01/21/2022 00:27:52] INFO: Improved metrics: ['ap30', 'rec30']
+[01/21/2022 00:27:52] INFO: epoch=38. results={'ap30': 0.9737015121630506, 'rec30': 0.9743589743589743}.
+[01/21/2022 00:27:59] INFO: Epoch: 39 step 0 (0%), clf loss 0.15421, reg loss 0.11289, lr 0.0001
+[01/21/2022 00:29:03] INFO: Epoch: 39 step 10 (71%), clf loss 0.17283, reg loss 0.12954, lr 0.0001
+[01/21/2022 00:29:22] INFO: Starting evaluation
+[01/21/2022 00:29:31] INFO: Evaluation took 8.717 seconds.
+[01/21/2022 00:29:31] INFO: Improved metrics: ['ap30', 'rec30']
+[01/21/2022 00:29:31] INFO: epoch=39. results={'ap30': 0.9737015121630506, 'rec30': 0.9743589743589743}.
+[01/21/2022 00:29:38] INFO: Epoch: 40 step 0 (0%), clf loss 0.16867, reg loss 0.12025, lr 0.0001
+[01/21/2022 00:30:47] INFO: Epoch: 40 step 10 (71%), clf loss 0.16241, reg loss 0.13257, lr 0.0001
+[01/21/2022 00:31:06] INFO: Starting evaluation
+[01/21/2022 00:31:14] INFO: Evaluation took 7.865 seconds.
+[01/21/2022 00:31:14] INFO: Improved metrics: ['ap30', 'rec30']
+[01/21/2022 00:31:14] INFO: epoch=40. results={'ap30': 0.9737015121630506, 'rec30': 0.9743589743589743}.
+[01/21/2022 00:31:20] INFO: Epoch: 41 step 0 (0%), clf loss 0.1463, reg loss 0.12472, lr 0.0001
+[01/21/2022 00:32:24] INFO: Epoch: 41 step 10 (71%), clf loss 0.15069, reg loss 0.12582, lr 0.0001
+[01/21/2022 00:32:43] INFO: Starting evaluation
+[01/21/2022 00:32:51] INFO: Evaluation took 7.813 seconds.
+[01/21/2022 00:32:51] INFO: Improved metrics: ['ap30', 'rec30']
+[01/21/2022 00:32:51] INFO: epoch=41. results={'ap30': 0.9737015121630506, 'rec30': 0.9743589743589743}.
+[01/21/2022 00:32:57] INFO: Epoch: 42 step 0 (0%), clf loss 0.12252, reg loss 0.095519, lr 0.0001
+[01/21/2022 00:33:58] INFO: Epoch: 42 step 10 (71%), clf loss 0.1402, reg loss 0.13282, lr 0.0001
+[01/21/2022 00:34:17] INFO: Starting evaluation
+[01/21/2022 00:34:25] INFO: Evaluation took 8.198 seconds.
+[01/21/2022 00:34:25] INFO: Improved metrics: ['rec30']
+[01/21/2022 00:34:26] INFO: epoch=42. results={'ap30': 0.9737015121630506, 'rec30': 0.9743589743589743}.
+[01/21/2022 00:34:32] INFO: Epoch: 43 step 0 (0%), clf loss 0.12483, reg loss 0.1065, lr 0.0001
+[01/21/2022 00:35:35] INFO: Epoch: 43 step 10 (71%), clf loss 0.13676, reg loss 0.12012, lr 9.9623e-05
+[01/21/2022 00:35:54] INFO: Starting evaluation
+[01/21/2022 00:36:03] INFO: Evaluation took 8.496 seconds.
+[01/21/2022 00:36:03] INFO: Improved metrics: ['ap30', 'rec30']
+[01/21/2022 00:36:03] INFO: epoch=43. results={'ap30': 0.9737015121630506, 'rec30': 0.9743589743589743}.
+[01/21/2022 00:36:09] INFO: Epoch: 44 step 0 (0%), clf loss 0.11318, reg loss 0.099512, lr 9.9225e-05
+[01/21/2022 00:37:10] INFO: Epoch: 44 step 10 (71%), clf loss 0.12476, reg loss 0.10983, lr 9.7619e-05
+[01/21/2022 00:37:28] INFO: Starting evaluation
+[01/21/2022 00:37:36] INFO: Evaluation took 7.697 seconds.
+[01/21/2022 00:37:36] INFO: Improved metrics: ['ap30', 'rec30']
+[01/21/2022 00:37:36] INFO: epoch=44. results={'ap30': 0.9737015121630506, 'rec30': 0.9743589743589743}.
+[01/21/2022 00:37:42] INFO: Epoch: 45 step 0 (0%), clf loss 0.10123, reg loss 0.087677, lr 9.6737e-05
+[01/21/2022 00:38:43] INFO: Epoch: 45 step 10 (71%), clf loss 0.12485, reg loss 0.12032, lr 9.3954e-05
+[01/21/2022 00:39:02] INFO: Starting evaluation
+[01/21/2022 00:39:10] INFO: Evaluation took 8.452 seconds.
+[01/21/2022 00:39:10] INFO: Improved metrics: ['ap30', 'rec30']
+[01/21/2022 00:39:10] INFO: epoch=45. results={'ap30': 1.0, 'rec30': 1.0}.
+[01/21/2022 00:39:17] INFO: Epoch: 46 step 0 (0%), clf loss 0.12104, reg loss 0.096544, lr 9.2619e-05
+[01/21/2022 00:40:21] INFO: Epoch: 46 step 10 (71%), clf loss 0.12388, reg loss 0.12463, lr 8.8757e-05
+[01/21/2022 00:40:40] INFO: Starting evaluation
+[01/21/2022 00:40:49] INFO: Evaluation took 8.388 seconds.
+[01/21/2022 00:40:49] INFO: Improved metrics: []
+[01/21/2022 00:40:49] INFO: epoch=46. results={'ap30': 1.0, 'rec30': 1.0}.
+[01/21/2022 00:40:55] INFO: Epoch: 47 step 0 (0%), clf loss 0.11071, reg loss 0.12016, lr 8.7015e-05
+[01/21/2022 00:41:56] INFO: Epoch: 47 step 10 (71%), clf loss 0.116, reg loss 0.10709, lr 8.2209e-05
+[01/21/2022 00:42:15] INFO: Starting evaluation
+[01/21/2022 00:42:24] INFO: Evaluation took 8.409 seconds.
+[01/21/2022 00:42:24] INFO: Improved metrics: ['ap30', 'rec30']
+[01/21/2022 00:42:24] INFO: epoch=47. results={'ap30': 1.0, 'rec30': 1.0}.
+[01/21/2022 00:42:31] INFO: Epoch: 48 step 0 (0%), clf loss 0.11695, reg loss 0.087579, lr 8.0121e-05
+[01/21/2022 00:43:37] INFO: Epoch: 48 step 10 (71%), clf loss 0.11149, reg loss 0.10129, lr 7.4538e-05
+[01/21/2022 00:43:56] INFO: Starting evaluation
+[01/21/2022 00:44:04] INFO: Evaluation took 7.979 seconds.
+[01/21/2022 00:44:04] INFO: Improved metrics: ['ap30', 'rec30']
+[01/21/2022 00:44:04] INFO: epoch=48. results={'ap30': 1.0, 'rec30': 1.0}.
+[01/21/2022 00:44:11] INFO: Epoch: 49 step 0 (0%), clf loss 0.078251, reg loss 0.10771, lr 7.2177e-05
+[01/21/2022 00:45:18] INFO: Epoch: 49 step 10 (71%), clf loss 0.10759, reg loss 0.10552, lr 6.6012e-05
+[01/21/2022 00:45:38] INFO: Starting evaluation
+[01/21/2022 00:45:47] INFO: Evaluation took 9.131 seconds.
+[01/21/2022 00:45:47] INFO: Improved metrics: ['ap30', 'rec30']
+[01/21/2022 00:45:48] INFO: epoch=49. results={'ap30': 1.0, 'rec30': 1.0}.
+[01/21/2022 00:45:54] INFO: Epoch: 50 step 0 (0%), clf loss 0.10267, reg loss 0.09133, lr 6.346e-05
+[01/21/2022 00:46:58] INFO: Epoch: 50 step 10 (71%), clf loss 0.11195, reg loss 0.095251, lr 5.6928e-05
+[01/21/2022 00:47:17] INFO: Starting evaluation
+[01/21/2022 00:47:26] INFO: Evaluation took 8.666 seconds.
+[01/21/2022 00:47:26] INFO: Improved metrics: ['ap30', 'rec30']
+[01/21/2022 00:47:26] INFO: epoch=50. results={'ap30': 1.0, 'rec30': 1.0}.
+[01/21/2022 00:47:33] INFO: Epoch: 51 step 0 (0%), clf loss 0.086623, reg loss 0.071663, lr 5.4274e-05
+[01/21/2022 00:48:41] INFO: Epoch: 51 step 10 (71%), clf loss 0.098681, reg loss 0.094392, lr 4.7602e-05
+[01/21/2022 00:49:02] INFO: Starting evaluation
+[01/21/2022 00:49:11] INFO: Evaluation took 9.020 seconds.
+[01/21/2022 00:49:11] INFO: Improved metrics: ['ap30', 'rec30']
+[01/21/2022 00:49:12] INFO: epoch=51. results={'ap30': 1.0, 'rec30': 1.0}.
+[01/21/2022 00:49:18] INFO: Epoch: 52 step 0 (0%), clf loss 0.11418, reg loss 0.10964, lr 4.4939e-05
+[01/21/2022 00:50:26] INFO: Epoch: 52 step 10 (71%), clf loss 0.10999, reg loss 0.095981, lr 3.836e-05
+[01/21/2022 00:50:47] INFO: Starting evaluation
+[01/21/2022 00:50:56] INFO: Evaluation took 8.517 seconds.
+[01/21/2022 00:50:56] INFO: Improved metrics: ['ap30', 'rec30']
+[01/21/2022 00:50:56] INFO: epoch=52. results={'ap30': 1.0, 'rec30': 1.0}.
+[01/21/2022 00:51:03] INFO: Epoch: 53 step 0 (0%), clf loss 0.12436, reg loss 0.11611, lr 3.578e-05
+[01/21/2022 00:52:11] INFO: Epoch: 53 step 10 (71%), clf loss 0.10536, reg loss 0.091768, lr 2.9524e-05
+[01/21/2022 00:52:32] INFO: Starting evaluation
+[01/21/2022 00:52:41] INFO: Evaluation took 9.013 seconds.
+[01/21/2022 00:52:41] INFO: Improved metrics: ['ap30', 'rec30']
+[01/21/2022 00:52:42] INFO: epoch=53. results={'ap30': 1.0, 'rec30': 1.0}.
+[01/21/2022 00:52:48] INFO: Epoch: 54 step 0 (0%), clf loss 0.082726, reg loss 0.074426, lr 2.7118e-05
+[01/21/2022 00:53:56] INFO: Epoch: 54 step 10 (71%), clf loss 0.10189, reg loss 0.087914, lr 2.1402e-05
+[01/21/2022 00:54:18] INFO: Starting evaluation
+[01/21/2022 00:54:28] INFO: Evaluation took 9.823 seconds.
+[01/21/2022 00:54:28] INFO: Improved metrics: ['ap30', 'rec30']
+[01/21/2022 00:54:28] INFO: epoch=54. results={'ap30': 1.0, 'rec30': 1.0}.
+[01/21/2022 00:54:35] INFO: Epoch: 55 step 0 (0%), clf loss 0.072192, reg loss 0.067704, lr 1.9253e-05
+[01/21/2022 00:55:44] INFO: Epoch: 55 step 10 (71%), clf loss 0.093234, reg loss 0.083187, lr 1.4277e-05
+[01/21/2022 00:56:05] INFO: Starting evaluation
+[01/21/2022 00:56:14] INFO: Evaluation took 9.497 seconds.
+[01/21/2022 00:56:14] INFO: Improved metrics: ['ap30', 'rec30']
+[01/21/2022 00:56:15] INFO: epoch=55. results={'ap30': 1.0, 'rec30': 1.0}.
+[01/21/2022 00:56:22] INFO: Epoch: 56 step 0 (0%), clf loss 0.087673, reg loss 0.070617, lr 1.2461e-05
+[01/21/2022 00:57:32] INFO: Epoch: 56 step 10 (71%), clf loss 0.10544, reg loss 0.093809, lr 8.3986e-06
+[01/21/2022 00:57:53] INFO: Starting evaluation
+[01/21/2022 00:58:02] INFO: Evaluation took 9.216 seconds.
+[01/21/2022 00:58:02] INFO: Improved metrics: ['ap30', 'rec30']
+[01/21/2022 00:58:02] INFO: epoch=56. results={'ap30': 1.0, 'rec30': 1.0}.
+[01/21/2022 00:58:09] INFO: Epoch: 57 step 0 (0%), clf loss 0.084923, reg loss 0.087406, lr 6.9776e-06
+[01/21/2022 00:59:14] INFO: Epoch: 57 step 10 (71%), clf loss 0.1012, reg loss 0.087919, lr 3.9705e-06
+[01/21/2022 00:59:36] INFO: Starting evaluation
+[01/21/2022 00:59:45] INFO: Evaluation took 9.256 seconds.
+[01/21/2022 00:59:45] INFO: Improved metrics: ['ap30', 'rec30']
+[01/21/2022 00:59:45] INFO: epoch=57. results={'ap30': 1.0, 'rec30': 1.0}.
+[01/21/2022 00:59:52] INFO: Epoch: 58 step 0 (0%), clf loss 0.090398, reg loss 0.075185, lr 2.9947e-06
+[01/21/2022 01:00:59] INFO: Epoch: 58 step 10 (71%), clf loss 0.10389, reg loss 0.088084, lr 1.1474e-06
+[01/21/2022 01:01:19] INFO: Starting evaluation
+[01/21/2022 01:01:27] INFO: Evaluation took 8.437 seconds.
+[01/21/2022 01:01:27] INFO: Improved metrics: ['ap30', 'rec30']
+[01/21/2022 01:01:27] INFO: epoch=58. results={'ap30': 1.0, 'rec30': 1.0}.
+[01/21/2022 01:01:34] INFO: Epoch: 59 step 0 (0%), clf loss 0.10116, reg loss 0.083545, lr 6.5085e-07
+[01/21/2022 01:02:43] INFO: Epoch: 59 step 10 (71%), clf loss 0.093892, reg loss 0.07882, lr 2.7838e-08
+[01/21/2022 01:03:04] INFO: Starting evaluation
+[01/21/2022 01:03:13] INFO: Evaluation took 9.229 seconds.
+[01/21/2022 01:03:13] INFO: Improved metrics: ['ap30', 'rec30']
+[01/21/2022 01:03:13] INFO: epoch=59. results={'ap30': 1.0, 'rec30': 1.0}.

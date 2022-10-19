@@ -1,0 +1,54 @@
+data:
+  data_path: /home/mk/project/retina/barrel
+model:
+  anchors:
+    aspect_ratios:
+    - 0.5
+    - 1
+    - 2
+    scales:
+    - 1.0
+    - 1.25
+    - 1.5
+    sizes:
+    - 32
+    - 64
+    - 128
+    - 256
+    - 512
+  backbone: resnet18
+  fpn:
+    levels:
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    num_channels: 128
+    type: retinanet
+    use_dw: false
+  img_size:
+  - 512
+  - 512
+  kwargs:
+    pretrained: true
+  num_classes: 1
+  retinanet_head:
+    num_levels: 4
+    use_dw: false
+  type: detection
+training:
+  epochs: 60
+  eval_batch_size: 1
+  eval_start_epoch: 10
+  lr_schedule:
+    end_lr: 1.0e-08
+    max_lr: 0.0001
+    start_lr: 0.0001
+    warmup_fraction: 0.72
+  optimizer:
+    lr: 0.0005
+    momentum: 0.9
+    type: Ranger
+    weight_decay: 0
+  train_batch_size: 25
