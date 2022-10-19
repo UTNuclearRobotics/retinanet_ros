@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
-import sys
-sys.path.append('/usr/lib/python2.7/dist-packages')
+# import sys
+# sys.path.append('/usr/lib/python2.7/dist-packages')
 import rospy
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge, CvBridgeError
 import torch
-sys.path.remove('/usr/lib/python2.7/dist-packages')
-sys.path.remove('/opt/ros/melodic/lib/python2.7/dist-packages')
+# sys.path.remove('/usr/lib/python2.7/dist-packages')
+# sys.path.remove('/opt/ros/melodic/lib/python2.7/dist-packages')
 import cv2
-sys.path.append('/opt/ros/melodic/lib/python2.7/dist-packages')
+# sys.path.append('/opt/ros/melodic/lib/python2.7/dist-packages')
 # sys.path.append('/usr/lib/python2.7/dist-packages')
 import numpy as np
 # print("numpy_version", np.version)
@@ -22,14 +22,14 @@ class ObjectDectors(object):
     def __init__(self, wait=0.0):
         # image_topic = "/camera/rgb/image_raw"
         # self.model_ = Detector(timestamp="2021-04-22T11.25.25")
-        self.model_ = Detector(timestamp="2021-07-01T22.24.44")
+        self.model_ = Detector(timestamp="2022-03-03T22.22.06")
         self.model_.eval()
         self.img_pub =rospy.Publisher("detected_image", Image, queue_size=10)
         self.ret_pub =rospy.Publisher("retina_ros/bounding_boxes", BoundingBoxes, queue_size=10)
         self.bridge = CvBridge()
         print("model-created")
         # image_topic = "/hsrb/head_rgbd_sensor/rgb/image_raw"
-        image_topic = "camera/color/image_raw"
+        image_topic = "realsense_front/color/image_raw"
         rospy.Subscriber(image_topic, Image, self.image_callback)
         self.savefigure=False
         self.listener()
@@ -104,7 +104,7 @@ class ObjectDectors(object):
                     cv2.putText(image_before_resize, str(confidence)[:4], (box[0]-2, box[1]-2), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,255,0), 2)
                     # msg_frame = self.bridge.cv2_to_imgmsg(image_ori)
                     detection_box = BoundingBox()
-                    # detection_box.Class=str(box.class_id)
+                    detection_box.Class="barrel"
 
                     detection_box.xmin = box[0]
                     detection_box.ymin = box[1]
