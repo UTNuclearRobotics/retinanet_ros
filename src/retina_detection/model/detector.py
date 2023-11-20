@@ -53,7 +53,7 @@ class Detector(torch.nn.Module):
                 # Download the model. This has the yaml containing the backbone.
 
                 self.model_path = (
-                    pathlib.Path("~/hololens_ws/src/object_detection/retinanet_ros/models").expanduser() / timestamp
+                    pathlib.Path("~/afc_ws/src/object_detection/retinanet_ros/models").expanduser() / timestamp
                     # pathlib.Path("~/runs/" +repo_path).expanduser() / timestamp
                 )
 
